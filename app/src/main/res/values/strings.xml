@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DeltaHA</string>
-    <string name="monitor_name">Kitchen</string>
+    <string name="monitor_name_label">Monitor Name</string>
+    <string name="monitor_name">Placeholder</string>
 </resources>

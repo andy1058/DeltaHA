@@ -7,7 +7,11 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@string/monitor_name"
+        android:text="@string/monitor_name_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/monitor_name"/>
@@ -15,8 +19,7 @@
     <Switch
         android:id="@+id/on_off_toggle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-/>
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
