@@ -1,5 +1,6 @@
 package com.homeautomation.deltaha;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -53,8 +54,18 @@ public class MonitorListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(getActivity(), mMonitor.getName() + " clicked!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), mMonitor.getName() + " clicked!", Toast.LENGTH_SHORT).show();
+            //Intent intent = new Intent(getActivity(), MainActivity.class);
+            Intent intent = MainActivity.newIntent(getActivity(), mMonitor.getId());
+            startActivity(intent);
+
         }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
     }
 
     private class MonitorAdapter extends RecyclerView.Adapter<MonitorHolder>{
@@ -85,8 +96,15 @@ public class MonitorListFragment extends Fragment {
     private void updateUI(){
         MonitorList monitorList = MonitorList.get(getActivity());
         List<Monitor> monitors = monitorList.getMonitors();
-        mAdapter = new MonitorAdapter(monitors);
-        mMonitorRecyclerView.setAdapter(mAdapter);
+
+        if (mAdapter == null){
+            mAdapter = new MonitorAdapter(monitors);
+            mMonitorRecyclerView.setAdapter(mAdapter);
+        }
+        else{
+            mAdapter.notifyDataSetChanged();
+        }
+
     }
 
 

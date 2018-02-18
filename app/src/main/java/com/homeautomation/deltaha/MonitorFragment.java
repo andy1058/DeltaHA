@@ -17,11 +17,21 @@ public class MonitorFragment extends Fragment {
 
     private Monitor mMonitor;
     private Switch mCheckbox;
+    private static final String ARG_MONITOR_ID = "monitor_id";
+
+    public static MonitorFragment newInstance(String monitorId){
+        Bundle args = new Bundle();
+        args.putString(ARG_MONITOR_ID, monitorId);
+        MonitorFragment fragment = new MonitorFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mMonitor = new Monitor();
+        String monitorID = (String) getArguments().getString(ARG_MONITOR_ID);
+        mMonitor = MonitorList.get(getActivity()).getMonitor(monitorID);
     }
 
     @Override
@@ -38,5 +48,6 @@ public class MonitorFragment extends Fragment {
 
         return v;
     }
+
 
 }
