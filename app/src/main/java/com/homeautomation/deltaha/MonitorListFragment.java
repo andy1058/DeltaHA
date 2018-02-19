@@ -49,7 +49,14 @@ public class MonitorListFragment extends Fragment {
         public void bind(Monitor monitor){
             mMonitor = monitor;
             mTitleTextView.setText(mMonitor.getName());
-            mStateTextView.setText(mMonitor.getState());
+
+            if (mMonitor.getState() == "true"){
+                mStateTextView.setText("On");
+            }
+            else {
+                mStateTextView.setText("Off");
+            }
+
         }
 
         @Override
