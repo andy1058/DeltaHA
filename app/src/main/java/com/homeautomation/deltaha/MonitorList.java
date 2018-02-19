@@ -47,6 +47,11 @@ public class MonitorList {
 
     }
 
+    public void addMonitor(Monitor newMonitor){
+        mMonitors.add(newMonitor);
+
+    }
+
     public List<Monitor> getMonitors(){
         return mMonitors;
     }

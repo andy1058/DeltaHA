@@ -2,4 +2,8 @@
     <string name="app_name">DeltaHA</string>
     <string name="monitor_name_label">Monitor Name</string>
     <string name="monitor_name">Placeholder</string>
+    <string name="new_monitor">New Monitor</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle_format">%1$d monitors</string>
 </resources>
